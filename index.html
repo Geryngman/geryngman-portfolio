@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eliud Geryngman — Application Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#1a1410;
+    --ground-2:#221a13;
+    --parchment:#efe7d8;
+    --parchment-dim:#b9ae9c;
+    --leaf:#5c9169;
+    --leaf-dim:#3d5f47;
+    --amber:#c8813a;
+    --line:#3a2f24;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ground);
+    color:var(--parchment);
+    font-family:'Inter',system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:940px;margin:0 auto;padding:0 32px}
+
+  /* ---- hero ---- */
+  header.hero{
+    padding:120px 0 96px;
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,var(--ground) 0%,var(--ground-2) 100%);
+  }
+  .kicker{
+    font-size:14px;
+    letter-spacing:.04em;
+    color:var(--leaf);
+    margin-bottom:22px;
+    opacity:0;
+    animation:rise .7s .05s ease forwards;
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:clamp(44px,8vw,86px);
+    line-height:1.02;
+    letter-spacing:-.015em;
+    margin-bottom:28px;
+    opacity:0;
+    animation:rise .7s .18s ease forwards;
+  }
+  h1 .soil{color:var(--amber)}
+  h1 .syntax{color:var(--leaf)}
+  .lede{
+    font-size:clamp(18px,2.4vw,22px);
+    max-width:62ch;
+    color:var(--parchment);
+    opacity:0;
+    animation:rise .7s .32s ease forwards;
+  }
+  .lede .muted{color:var(--parchment-dim)}
+  .hero-meta{
+    margin-top:40px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 28px;
+    font-size:15px;
+    color:var(--parchment-dim);
+    opacity:0;
+    animation:rise .7s .46s ease forwards;
+  }
+  .hero-meta b{color:var(--parchment);font-weight:500}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .kicker,h1,.lede,.hero-meta{animation:none;opacity:1}
+  }
+
+  /* ---- sections ---- */
+  section{padding:84px 0;border-bottom:1px solid var(--line)}
+  .sec-head{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:15px;
+    letter-spacing:.02em;
+    color:var(--leaf);
+    margin-bottom:8px;
+  }
+  h2{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:clamp(28px,4vw,40px);
+    line-height:1.1;
+    letter-spacing:-.01em;
+    margin-bottom:36px;
+    max-width:24ch;
+  }
+
+  /* projects */
+  .project{padding:34px 0;border-top:1px solid var(--line)}
+  .project:first-of-type{border-top:none;padding-top:0}
+  .project h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:24px;
+    margin-bottom:6px;
+  }
+  .project .role{
+    font-size:14px;
+    color:var(--amber);
+    margin-bottom:16px;
+  }
+  .project p{max-width:70ch;color:var(--parchment);margin-bottom:16px}
+  .stack{display:flex;flex-wrap:wrap;gap:8px}
+  .stack span{
+    font-size:13px;
+    color:var(--parchment-dim);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:4px 11px;
+  }
+
+  /* about */
+  .about p{max-width:68ch;margin-bottom:20px}
+  .about p:last-child{margin-bottom:0}
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px}
+  .skill-group h4{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:18px;
+    margin-bottom:12px;
+    color:var(--amber);
+  }
+  .skill-group ul{list-style:none}
+  .skill-group li{
+    color:var(--parchment-dim);
+    padding:3px 0;
+    font-size:15.5px;
+  }
+
+  /* contact */
+  .contact h2{margin-bottom:18px}
+  .contact p{max-width:60ch;color:var(--parchment-dim);margin-bottom:30px}
+  .links{display:flex;flex-wrap:wrap;gap:14px}
+  .links a{
+    display:inline-block;
+    text-decoration:none;
+    font-weight:500;
+    font-size:15px;
+    padding:13px 22px;
+    border-radius:3px;
+    border:1px solid var(--leaf-dim);
+    color:var(--parchment);
+    transition:background .18s ease,border-color .18s ease;
+  }
+  .links a:hover{background:var(--leaf-dim);border-color:var(--leaf)}
+  .links a.primary{background:var(--leaf);border-color:var(--leaf);color:#10190f}
+  .links a.primary:hover{background:var(--leaf-dim);color:var(--parchment)}
+  .placeholder{color:var(--amber);font-size:13.5px;margin-top:18px}
+
+  footer{padding:40px 0;color:var(--parchment-dim);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Kapsabet, Kenya &middot; open to roles in Kenya and Germany</p>
+    <h1>Eliud Geryngman builds <span class="syntax">software</span>, grows <span class="soil">coffee</span>, and writes it all down.</h1>
+    <p class="lede">Application developer and IT professional with roughly a decade of experience turning messy real-world problems into working systems. <span class="muted">Full-stack web, a former business analyst's eye for requirements, and a habit of shipping things people actually rely on.</span></p>
+    <div class="hero-meta">
+      <span><b>BSc</b> Information Technology, South Eastern Kenya University</span>
+      <span><b>Focus</b> Django &middot; Python &middot; full-stack web</span>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <p class="sec-head">Selected work</p>
+    <h2>Three projects, one way of thinking about problems.</h2>
+
+    <div class="project">
+      <h3>Bombo Farm Manager</h3>
+      <p class="role">Application developer &middot; Django / HTMX progressive web app</p>
+      <p>A management system for a smallholder washed-process coffee cooperative, rebuilt from an AppSheet prototype into a proper Django progressive web app. It tracks plots, coffee varieties, harvest batches and yields, with role-based access so pickers, weighers and managers each see only what they need. Includes SMS notifications through the Africa's Talking API and a fix for a batch-ID race condition that had been double-counting deliveries.</p>
+      <div class="stack"><span>Django</span><span>HTMX</span><span>Python</span><span>PostgreSQL</span><span>Africa's Talking SMS</span><span>PWA</span></div>
+      <img src="images/app-home.png" alt="The Bombo Farm Manager home screen showing feature tiles for farmers, deliveries, wet and dry processing stages, reports, dispatches and sales" style="width:100%;max-width:760px;margin-top:22px;border:1px solid var(--line);border-radius:4px;display:block">
+      <p style="margin-top:14px;font-size:14.5px;color:var(--parchment-dim)"><a href="updates.html" style="color:var(--leaf);text-decoration:none">See field notes from the farm &rarr;</a></p>
+    </div>
+
+    <div class="project">
+      <h3>Church AV &amp; livestream production</h3>
+      <p class="role">Media and AV lead &middot; AIC Boma Kapsabet</p>
+      <p>End-to-end live production for weekly services: multi-camera capture, live switching and streaming. I run OBS Studio with Canon XA60 and EOS R50 V cameras through an AVMATRIX Shark S4 switcher, and generate bilingual sermon slide decks programmatically so the words on screen keep pace with the service. Reliable, repeatable, and handed off to a volunteer team.</p>
+      <div class="stack"><span>OBS Studio</span><span>Live switching</span><span>pptxgenjs</span><span>Multi-camera</span><span>Streaming</span></div>
+    </div>
+
+    <div class="project">
+      <h3>Freelance software development</h3>
+      <p class="role">Independent &middot; Geryngman Writers &amp; Freelance Dev</p>
+      <p>Custom web and mobile builds for local businesses and international clients. Django and Python on the backend, Flutter on mobile, and M-Pesa Daraja API integration for Kenyan businesses taking mobile payments. When a team needs something working now, I also build on AppSheet rather than making them wait for a full custom system.</p>
+      <div class="stack"><span>Django</span><span>Python</span><span>Flutter / Dart</span><span>M-Pesa Daraja API</span><span>AppSheet</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <p class="sec-head">About</p>
+    <h2>An engineer who understands the business behind the code.</h2>
+    <p>I started out as a senior business analyst, which is still how I approach building software: understand how the work really happens before writing a line of code. That means the systems I ship fit the people using them, rather than forcing them to bend around the software.</p>
+    <p>Alongside development I have spent close to a decade providing research and technical writing support to graduate and postgraduate students, which keeps my documentation clear and my thinking organised. I am equally comfortable writing clean code and writing a clear report for people who will never read the code.</p>
+    <p>I am currently open to application developer roles, both locally and internationally, and I am actively preparing to relocate to Germany for work. I manage several demanding commitments at once and I am used to owning a problem from first conversation to working system.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <p class="sec-head">Skills</p>
+    <h2>What I work with.</h2>
+    <div class="skills">
+      <div class="skill-group">
+        <h4>Development</h4>
+        <ul>
+          <li>Python</li>
+          <li>Django</li>
+          <li>Full-stack web development</li>
+          <li>HTMX, HTML, CSS, JavaScript</li>
+          <li>Flutter / Dart</li>
+          <li>REST APIs</li>
+          <li>PostgreSQL &amp; database design</li>
+          <li>Git &amp; version control</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>IT &amp; analysis</h4>
+        <ul>
+          <li>Business analysis</li>
+          <li>Requirements gathering</li>
+          <li>Systems analysis</li>
+          <li>Process design</li>
+          <li>Technical documentation</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Also</h4>
+        <ul>
+          <li>M-Pesa Daraja integration</li>
+          <li>AppSheet (no-code / low-code)</li>
+          <li>AV &amp; live production</li>
+          <li>Project management</li>
+          <li>Research &amp; technical writing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="sec-head">Get in touch</p>
+    <h2>Available for freelance, contract, and full-time work.</h2>
+    <p>Based in Kapsabet, Kenya, working remotely with clients everywhere, and open to relocating to Germany.</p>
+    <div class="links">
+      <a class="primary" href="mailto:ekgeryng@gmail.com">Email me</a>
+      <a href="https://wa.me/254742072878" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://github.com/Geryngman" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/geryngman" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Eliud Geryngman &middot; Kapsabet, Nandi County, Kenya</span>
+    <span>Application developer</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bombo Coffee — Field Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#1a1410;--ground-2:#221a13;--parchment:#efe7d8;
+    --parchment-dim:#b9ae9c;--leaf:#5c9169;--leaf-dim:#3d5f47;
+    --amber:#c8813a;--line:#3a2f24;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ground);color:var(--parchment);
+    font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 32px}
+
+  .topbar{padding:26px 0;border-bottom:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;
+    background:var(--ground-2);}
+  .topbar a{font-size:15px;color:var(--parchment-dim);text-decoration:none;
+    transition:color .15s ease}
+  .topbar a:hover{color:var(--leaf)}
+  .topbar .name{font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:var(--parchment)}
+
+  header.hero{padding:84px 0 64px;border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,var(--ground-2) 0%,var(--ground) 100%);}
+  .kicker{font-size:14px;letter-spacing:.04em;color:var(--leaf);margin-bottom:18px}
+  h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(38px,6.5vw,64px);
+    line-height:1.05;letter-spacing:-.015em;margin-bottom:22px}
+  h1 .berry{color:var(--amber)}
+  .lede{font-size:clamp(17px,2.2vw,20px);max-width:60ch;color:var(--parchment-dim)}
+
+  .gallery{padding:64px 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:28px;align-items:start}
+  .post{background:var(--ground-2);border:1px solid var(--line);
+    border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+  .post img{width:100%;height:auto;display:block;background:#000}
+  .post .body{padding:20px 22px 24px}
+  .post .date{font-size:13px;color:var(--amber);margin-bottom:8px}
+  .post h3{font-family:'Fraunces',serif;font-weight:600;font-size:20px;
+    margin-bottom:8px;line-height:1.2}
+  .post p{font-size:15px;color:var(--parchment-dim);line-height:1.6}
+
+  footer{padding:44px 0;border-top:1px solid var(--line);
+    color:var(--parchment-dim);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer a{color:var(--leaf);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap" style="padding-top:0;padding-bottom:0;">
+    <span class="name">Bombo Coffee</span>
+    <a href="index.html">&larr; Back to portfolio</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Field notes from Bombo Coffee Farm &middot; Nandi County, Kenya</p>
+    <h1>From <span class="berry">cherry</span> to parchment, one season at a time.</h1>
+    <p class="lede">A running log of life on the farm: what is ripening, what came in at the wet mill, and how the harvest is moving. The management system keeps the numbers; this is the picture.</p>
+  </div>
+</header>
+
+<section class="gallery">
+  <div class="wrap">
+    <div class="grid">
+
+      <!-- ===== NEWEST POST FIRST. To add a new push, copy one whole
+           <article class="post"> ... </article> block, paste it directly
+           below this comment, and change the image, date, title and text. ===== -->
+
+      <article class="post">
+        <img src="images/coffee-harvest.jpeg" alt="A large spread of freshly picked red coffee cherries laid out on the floor for sorting">
+        <div class="body">
+          <p class="date">September 2026</p>
+          <h3>A big day at the collection point</h3>
+          <p>Ripe cherry spread out for sorting before it heads to the wet mill. Days like this are why the delivery records matter &mdash; every kilo tracked back to the farmer who brought it.</p>
+        </div>
+      </article>
+
+      <article class="post">
+        <img src="images/coffee-tree.jpeg" alt="A coffee tree heavy with ripening red and green cherries at dusk">
+        <div class="body">
+          <p class="date">September 2026</p>
+          <h3>The main crop is colouring up</h3>
+          <p>Red and green cherry crowding the branches as the main crop ripens. When they turn fully red, picking begins and the season&rsquo;s batches start flowing through the system.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Bombo Coffee Farm &middot; Nandi County, Kenya</span>
+    <a href="index.html">Eliud Geryngman &middot; portfolio</a>
+  </div>
+</footer>
+
+</body>
+</html>
